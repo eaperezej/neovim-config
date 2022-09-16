@@ -1,0 +1,6 @@
+require 'plugins'
+require 'plugins-configuration'
+require 'settings'
+require 'keymaps'
+require 'theme'
+require 'commands'
