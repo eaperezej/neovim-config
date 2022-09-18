@@ -21,5 +21,6 @@ Plug('catppuccin/nvim', { ['as'] = 'catppuccin' })
 Plug('romgrk/barbar.nvim')
 Plug('dense-analysis/ale')
 Plug('matze/vim-move')
+Plug('glepnir/dashboard-nvim')
 
 vim.call('plug#end')
