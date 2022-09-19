@@ -11,3 +11,7 @@ user_command('Lzg', 'FloatermNew --width=0.9 --height=0.9 lazygit', { desc = 'Op
 vim.cmd [[
 autocmd BufWrite *.py :CocCommand python.sortImports
 ]]
+
+vim.cmd [[
+autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')
+]]
