@@ -21,7 +21,8 @@
     "typescriptreact",
     "python",
     "rust",
-    "json"
+    "json",
+    "go"
   ],
   "python.formatting.provider": "black",
   "python.sortImports.path": "isort",
