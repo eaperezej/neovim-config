@@ -18,15 +18,6 @@ map('n', '<C-g>', '<cmd>lua require(\'telescope.builtin\').live_grep()<cr>', opt
 map('n', '<C-e>', '<cmd>lua require(\'telescope\').extensions.file_browser.file_browser()<cr>', opts)
 
 
--- Coc
-map('n', 'gd', '<Plug>(coc-definition)', opts)
-map('n', 'gy', '<Plug>(coc-type-definition)', opts)
-map('n', 'gi', '<Plug>(coc-implementation)', opts)
-map('n', 'gr', '<Plug>(coc-references)', opts)
-map('n', '<Leader>rn', '<Plug>(coc-rename)', opts)
-map('i', '<CR>', 'coc#pum#visible() ? coc#_select_confirm() : \'<C-G>u<CR><C-R>=coc#on_enter()<CR>\'', { silent = true, expr = true, noremap = true })
-
-
 -- Floaterm
 map('n', 'ft', '<cmd>FloatermNew --width=0.9 --height=0.9 <cr>', opts)
 

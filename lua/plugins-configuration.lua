@@ -3,14 +3,39 @@ local home = os.getenv('HOME')
 
 -- Configuration
 
+-- LSP
+local lsp = require('lsp-zero')
 
--- Ale
-global.ale_disable_lsp = 1
+lsp.preset('recommended')
 
+lsp.set_preferences({
+  suggest_lsp_servers = true,
+  setup_servers_on_start = true,
+  set_lsp_keymaps = true,
+  configure_diagnostics = true,
+  cmp_capabilities = true,
+  manage_nvim_cmp = true,
+  call_servers = 'local',
+  sign_icons = {
+    error = '',
+    warn = '',
+    hint = '',
+    info = ''
+  }
+})
 
--- Netrw
-global.loaded_netrw = 1
-global.loaded_netrwPlugin = 1
+lsp.nvim_workspace()
+
+lsp.setup()
+
+vim.diagnostic.config({
+  virtual_text = true,
+  signs = true,
+  update_in_insert = false,
+  underline = true,
+  severity_sort = false,
+  float = true,
+})
 
 
 -- Telescope
@@ -39,22 +64,6 @@ require('telescope').setup {
 
 require('telescope').load_extension('file_browser')
 
--- CoC
-global.coc_global_extensions = {
-  'coc-pyright',
-  'coc-go',
-  'coc-pairs',
-  'coc-sumneko-lua',
-  'coc-json',
-  'coc-tsserver',
-  'coc-prettier',
-  'coc-highlight'
-}
-
-
--- Editorconfig
-global.EditorConfig_exclude_patterns = { 'fugitive://.*' }
-
 
 -- Gitsigns
 require('gitsigns').setup {
@@ -65,23 +74,12 @@ require('gitsigns').setup {
 }
 
 
+-- Editorconfig
+global.EditorConfig_exclude_patterns = { 'fugitive://.*' }
+
+
 -- Lualine
-require('lualine').setup {
-  options = {
-      section_separators = { left = '', right = '' },
-  },
-  sections = {
-    lualine_a = {
-      { 'mode', separator = { left = '' }, right_padding = 2 },
-    },
-    lualine_c = {
-      { 'filename', path = 1 }
-    },
-    lualine_z = {
-      { 'location', separator = { right = '' }, left_padding = 2 },
-    },
-  }
-}
+require('lualine').setup {}
 
 
 -- Dashboard
