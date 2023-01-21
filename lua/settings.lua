@@ -12,7 +12,6 @@ opt.termguicolors = true
 opt.title = true
 opt.wildmenu = true
 opt.wrap = false
-opt.mouse = 'a'
 opt.showmode = false
 opt.errorbells = false
 opt.swapfile = false
@@ -21,6 +20,7 @@ opt.writebackup = false
 opt.hidden = true
 opt.incsearch = true
 opt.hlsearch = true
+opt.signcolumn = 'yes'
 
 vim.cmd [[
 set encoding=UTF-8
