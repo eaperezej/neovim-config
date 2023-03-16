@@ -114,3 +114,6 @@ dashboard.custom_center = {
 }
 
 dashboard.custom_footer = {}
+
+-- Comments
+require('Comment').setup()

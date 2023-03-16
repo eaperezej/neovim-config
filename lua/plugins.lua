@@ -38,4 +38,6 @@ Plug('L3MON4D3/LuaSnip')
 Plug('rafamadriz/friendly-snippets')
 Plug('VonHeikemen/lsp-zero.nvim', { ['branch'] = 'v1.x'})
 
+Plug('numToStr/Comment.nvim')
+
 vim.call('plug#end')

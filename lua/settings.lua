@@ -20,8 +20,13 @@ opt.writebackup = false
 opt.hidden = true
 opt.incsearch = true
 opt.hlsearch = true
-opt.signcolumn = 'yes'
+opt.signcolumn = "yes"
+opt.smartcase = true
+opt.ignorecase = true
+opt.clipboard = "unnamed"
+opt.mouse = nil
 
 vim.cmd [[
 set encoding=UTF-8
+set scroll=3
 ]]
