@@ -23,7 +23,7 @@ opt.hlsearch = true
 opt.signcolumn = "yes"
 opt.smartcase = true
 opt.ignorecase = true
-opt.clipboard = "unnamed"
+opt.clipboard = "unnamedplus"
 opt.mouse = nil
 
 vim.cmd [[

@@ -18,13 +18,12 @@ Plug('voldikss/vim-floaterm')
 Plug('editorconfig/editorconfig-vim')
 Plug('catppuccin/nvim', { ['as'] = 'catppuccin' })
 Plug('romgrk/barbar.nvim')
-Plug('dense-analysis/ale')
 Plug('matze/vim-move')
-Plug('glepnir/dashboard-nvim')
 
 Plug('neovim/nvim-lspconfig')
 Plug('williamboman/mason.nvim')
 Plug('williamboman/mason-lspconfig.nvim')
+Plug('jose-elias-alvarez/null-ls.nvim')
 
 
 Plug('hrsh7th/nvim-cmp')
@@ -36,7 +35,7 @@ Plug('hrsh7th/cmp-nvim-lua')
 
 Plug('L3MON4D3/LuaSnip')
 Plug('rafamadriz/friendly-snippets')
-Plug('VonHeikemen/lsp-zero.nvim', { ['branch'] = 'v1.x'})
+Plug('VonHeikemen/lsp-zero.nvim', { ['branch'] = 'v1.x' })
 
 Plug('numToStr/Comment.nvim')
 

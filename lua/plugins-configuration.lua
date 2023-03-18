@@ -1,9 +1,8 @@
 local global = vim.g
-local home = os.getenv('HOME')
+-- local home = os.getenv('HOME')
 
 -- Configuration
 
--- LSP
 local lsp = require('lsp-zero')
 
 lsp.preset('recommended')
@@ -31,7 +30,7 @@ lsp.setup()
 vim.diagnostic.config({
   virtual_text = true,
   signs = true,
-  update_in_insert = false,
+  update_in_insert = true,
   underline = true,
   severity_sort = false,
   float = true,
@@ -54,15 +53,23 @@ require('telescope').setup {
       'node_modules',
       'vendor'
     }
-  },
-  extensions = {
-    file_browser = {
-      hijack_netrw = true
-    }
   }
 }
 
 require('telescope').load_extension('file_browser')
+
+
+-- Null ls
+local null_ls = require('null-ls')
+local diagnostics = null_ls.builtins.diagnostics
+
+null_ls.setup {
+  debug = false,
+  update_in_insert = true,
+  sources = {
+    diagnostics.flake8,
+  }
+}
 
 
 -- Gitsigns
@@ -81,39 +88,6 @@ global.EditorConfig_exclude_patterns = { 'fugitive://.*' }
 -- Lualine
 require('lualine').setup {}
 
-
--- Dashboard
-local dashboard = require('dashboard')
-
-dashboard.custom_header = {
-    '',
-    '    ⢰⣧⣼⣯⠄⣸⣠⣶⣶⣦⣾⠄⠄⠄⠄⡀⠄⢀⣿⣿⠄⠄⠄⢸⡇⠄⠄ ',
-    '    ⣾⣿⠿⠿⠶⠿⢿⣿⣿⣿⣿⣦⣤⣄⢀⡅⢠⣾⣛⡉⠄⠄⠄⠸⢀⣿⠄ ',
-    '   ⢀⡋⣡⣴⣶⣶⡀⠄⠄⠙⢿⣿⣿⣿⣿⣿⣴⣿⣿⣿⢃⣤⣄⣀⣥⣿⣿⠄ ',
-    '   ⢸⣇⠻⣿⣿⣿⣧⣀⢀⣠⡌⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠿⠿⣿⣿⣿⠄ ',
-    '  ⢀⢸⣿⣷⣤⣤⣤⣬⣙⣛⢿⣿⣿⣿⣿⣿⣿⡿⣿⣿⡍⠄⠄⢀⣤⣄⠉⠋⣰ ',
-    '  ⣼⣖⣿⣿⣿⣿⣿⣿⣿⣿⣿⢿⣿⣿⣿⣿⣿⢇⣿⣿⡷⠶⠶⢿⣿⣿⠇⢀⣤ ',
-    ' ⠘⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣽⣿⣿⣿⡇⣿⣿⣿⣿⣿⣿⣷⣶⣥⣴⣿⡗ ',
-    ' ⢀⠈⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟  ',
-    ' ⢸⣿⣦⣌⣛⣻⣿⣿⣧⠙⠛⠛⡭⠅⠒⠦⠭⣭⡻⣿⣿⣿⣿⣿⣿⣿⣿⡿⠃  ',
-    ' ⠘⣿⣿⣿⣿⣿⣿⣿⣿⡆⠄⠄⠄⠄⠄⠄⠄⠄⠹⠈⢋⣽⣿⣿⣿⣿⣵⣾⠃  ',
-    '  ⠘⣿⣿⣿⣿⣿⣿⣿⣿⠄⣴⣿⣶⣄⠄⣴⣶⠄⢀⣾⣿⣿⣿⣿⣿⣿⠃   ',
-    '   ⠈⠻⣿⣿⣿⣿⣿⣿⡄⢻⣿⣿⣿⠄⣿⣿⡀⣾⣿⣿⣿⣿⣛⠛⠁    ',
-    '     ⠈⠛⢿⣿⣿⣿⠁⠞⢿⣿⣿⡄⢿⣿⡇⣸⣿⣿⠿⠛⠁      ',
-    '        ⠉⠻⣿⣿⣾⣦⡙⠻⣷⣾⣿⠃⠿⠋⠁     ⢀⣠⣴ ',
-    ' ⣿⣿⣿⣶⣶⣮⣥⣒⠲⢮⣝⡿⣿⣿⡆⣿⡿⠃⠄⠄⠄⠄⠄⠄⠄⣠⣴⣿⣿⣿ ',
-    '',
-}
-
-dashboard.custom_center = {
-  {
-    icon = '  ',
-    desc = 'Open Neovim config                      ',
-    action = 'lcd ' .. home .. '/.config/nvim',
-  },
-}
-
-dashboard.custom_footer = {}
 
 -- Comments
 require('Comment').setup()
