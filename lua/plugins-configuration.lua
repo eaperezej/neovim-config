@@ -2,7 +2,6 @@ local global = vim.g
 -- local home = os.getenv('HOME')
 
 -- Configuration
-
 local lsp = require('lsp-zero')
 
 lsp.preset('recommended')
