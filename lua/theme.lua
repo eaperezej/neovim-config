@@ -10,6 +10,10 @@ require('catppuccin').setup {}
 vim.cmd [[
   syntax enable
   colorscheme catppuccin
+  hi SpecialKey ctermfg=8 guifg=#8b62cc
+  hi NonText ctermfg=8 guifg=#8b62cc
+  hi LineNr ctermfg=8 guifg=#8b62cc
+  hi Comment guifg=#f4e1b7
 ]]
 
 local highlights = {
