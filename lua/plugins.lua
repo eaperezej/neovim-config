@@ -38,5 +38,7 @@ Plug('rafamadriz/friendly-snippets')
 Plug('VonHeikemen/lsp-zero.nvim', { ['branch'] = 'v1.x' })
 
 Plug('numToStr/Comment.nvim')
+Plug('vim-test/vim-test')
+Plug('klen/nvim-config-local')
 
 vim.call('plug#end')
