@@ -90,3 +90,16 @@ require('lualine').setup {}
 
 -- Comments
 require('Comment').setup()
+
+
+-- NVIM config local
+require('config-local').setup {
+  config_files = { ".nvimrc.lua" },
+
+  hashfile = vim.fn.stdpath("data") .. "/config-local",
+
+  autocommands_create = true,
+  commands_create = true,
+  silent = false,
+  lookup_parents = false,
+}
