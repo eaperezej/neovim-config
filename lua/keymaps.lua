@@ -18,10 +18,6 @@ map('n', '<C-g>', '<cmd>lua require(\'telescope.builtin\').live_grep()<cr>', opt
 map('n', '<C-e>', '<cmd>lua require(\'telescope\').extensions.file_browser.file_browser()<cr>', opts)
 
 
--- Floaterm
-map('n', 'ft', '<cmd>FloatermNew --width=0.9 --height=0.9 <cr>', opts)
-
-
 -- Remove highlights
 map('n', '<Leader><cr>', '<cmd>noh<cr>', { silent = true, nowait = true })
 
@@ -47,3 +43,8 @@ map('n', '<Space>bb', '<Cmd>BufferOrderByBufferNumber<CR>', opts)
 map('n', '<Space>bd', '<Cmd>BufferOrderByDirectory<CR>', opts)
 map('n', '<Space>bl', '<Cmd>BufferOrderByLanguage<CR>', opts)
 map('n', '<Space>bw', '<Cmd>BufferOrderByWindowNumber<CR>', opts)
+
+
+-- Test
+map('n', '<Leader>t', '<Cmd>TestNearest<CR>', opts)
+map('n', '<Leader>ft', '<Cmd>TestFile<CR>', opts)
